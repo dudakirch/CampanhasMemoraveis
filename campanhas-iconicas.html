@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campanhas Memoráveis Brasileiras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #0D1B2A;
+    --light: #F5F0E8;
+    --brastemp: #2E7D32;
+    --brastemp-light: #E8F5E9;
+    --brastemp-mid: #4CAF50;
+    --valisere: #6A1B9A;
+    --valisere-light: #F3E5F5;
+    --valisere-mid: #9C27B0;
+    --folha: #0D47A1;
+    --folha-light: #E3F2FD;
+    --folha-mid: #1976D2;
+    --bombril: #C2185B;
+    --bombril-light: #FCE4EC;
+    --bombril-mid: #E91E8C;
+    --rider: #E65100;
+    --rider-light: #FFF3E0;
+    --rider-mid: #FF6D00;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--dark);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(13,27,42,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .nav-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .nav-dots {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  .nav-dot {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 0.6;
+  }
+  .nav-dot:hover { opacity: 1; }
+
+  .nav-dot-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: block;
+  }
+  .nav-dot-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .nav-dot.d-brastemp .nav-dot-circle { background: var(--brastemp-mid); }
+  .nav-dot.d-valisere .nav-dot-circle { background: var(--valisere-mid); }
+  .nav-dot.d-folha    .nav-dot-circle { background: var(--folha-mid); }
+  .nav-dot.d-bombril  .nav-dot-circle { background: var(--bombril-mid); }
+  .nav-dot.d-rider    .nav-dot-circle { background: var(--rider-mid); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.04) 0%, transparent 70%);
+  }
+
+  .hero-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    opacity: 1;
+  }
+
+  .hero-title small {
+    display: block;
+    font-size: 0.38em;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.3;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    margin-top: 0.4em;
+  }
+
+  .hero-sub {
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+    opacity: 0.5;
+    letter-spacing: 0.08em;
+    max-width: 500px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .hero-strip {
+    display: flex;
+    gap: 0;
+    height: 3px;
+    width: 220px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+  }
+  .hero-strip span {
+    flex: 1;
+    display: block;
+  }
+  .s1 { background: var(--brastemp-mid); }
+  .s2 { background: var(--valisere-mid); }
+  .s3 { background: var(--folha-mid); }
+  .s4 { background: var(--bombril-mid); }
+  .s5 { background: var(--rider-mid); }
+
+  .hero-scroll {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 0.8; transform: scaleY(1.2); }
+  }
+
+  /* ── INTRO ── */
+  #intro {
+    background: var(--light);
+    color: var(--dark);
+    padding: 7rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro-inner {
+    max-width: 760px;
+    text-align: center;
+  }
+
+  .intro-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  .intro-body {
+    font-size: 1rem;
+    line-height: 1.85;
+    opacity: 0.7;
+    margin-bottom: 3rem;
+  }
+
+  .axes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 1rem;
+  }
+  .axis-card {
+    background: white;
+    padding: 1.5rem;
+  }
+  .axis-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    opacity: 0.12;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .axis-name {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--dark);
+  }
+  .axis-desc {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    opacity: 0.55;
+  }
+
+  /* ── CAMPAIGN SECTIONS ── */
+  .campaign {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .campaign-top {
+    padding: 5rem 3rem 3rem;
+    position: relative;
+  }
+
+  .campaign-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(7rem, 18vw, 18rem);
+    font-weight: 900;
+    line-height: 0.8;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .campaign-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .campaign-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .campaign-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .campaign-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    opacity: 0.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .campaign-year {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    opacity: 0.3;
+  }
+
+  /* Divider line */
+  .campaign-divider {
+    height: 1px;
+    margin: 0 3rem;
+    opacity: 0.15;
+    background: currentColor;
+  }
+
+  .campaign-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .cb-left, .cb-right {
+    padding: 3rem;
+  }
+
+  .cb-right {
+    border-left: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .block-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .block-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .block-body {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    opacity: 0.65;
+  }
+
+  .block-spacer { height: 2rem; }
+
+  /* Archetype badge */
+  .arq-badge {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem 1.4rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  .arq-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .arq-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .arq-axis {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  /* Desire block */
+  .desire-block {
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+  .desire-block .block-label { margin-bottom: 0.5rem; }
+  .desire-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-style: italic;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  /* Bottom bar per campaign */
+  .campaign-bottom {
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    border-top: 1px solid rgba(255,255,255,0.10);
+  }
+  .campaign-bottom span::before { content: '· '; }
+  .campaign-bottom span:first-child::before { content: ''; }
+
+  /* ── INDIVIDUAL CAMPAIGN COLORS ── */
+  #brastemp { background: #0a1a0a; color: #E8F5E9; }
+  #brastemp .campaign-num { color: var(--brastemp-mid); }
+  #brastemp .arq-badge { background: rgba(76,175,80,0.15); border: 1px solid rgba(76,175,80,0.25); }
+  #brastemp .desire-block { background: rgba(76,175,80,0.08); border: 1px solid rgba(76,175,80,0.15); }
+  #brastemp .campaign-bottom { color: var(--brastemp-mid); }
+  #brastemp .cb-right { border-left-color: rgba(76,175,80,0.12); }
+
+  #valisere { background: #120a1a; color: #F3E5F5; }
+  #valisere .campaign-num { color: var(--valisere-mid); }
+  #valisere .arq-badge { background: rgba(156,39,176,0.15); border: 1px solid rgba(156,39,176,0.25); }
+  #valisere .desire-block { background: rgba(156,39,176,0.08); border: 1px solid rgba(156,39,176,0.15); }
+  #valisere .campaign-bottom { color: var(--valisere-mid); }
+  #valisere .cb-right { border-left-color: rgba(156,39,176,0.12); }
+
+  #folha { background: #020d1a; color: #E3F2FD; }
+  #folha .campaign-num { color: var(--folha-mid); }
+  #folha .arq-badge { background: rgba(25,118,210,0.15); border: 1px solid rgba(25,118,210,0.25); }
+  #folha .desire-block { background: rgba(25,118,210,0.08); border: 1px solid rgba(25,118,210,0.15); }
+  #folha .campaign-bottom { color: var(--folha-mid); }
+  #folha .cb-right { border-left-color: rgba(25,118,210,0.12); }
+
+  #bombril { background: #1a0210; color: #FCE4EC; }
+  #bombril .campaign-num { color: var(--bombril-mid); }
+  #bombril .arq-badge { background: rgba(233,30,140,0.15); border: 1px solid rgba(233,30,140,0.25); }
+  #bombril .desire-block { background: rgba(233,30,140,0.08); border: 1px solid rgba(233,30,140,0.15); }
+  #bombril .campaign-bottom { color: var(--bombril-mid); }
+  #bombril .cb-right { border-left-color: rgba(233,30,140,0.12); }
+
+  #rider { background: #1a0800; color: #FFF3E0; }
+  #rider .campaign-num { color: var(--rider-mid); }
+  #rider .arq-badge { background: rgba(255,109,0,0.15); border: 1px solid rgba(255,109,0,0.25); }
+  #rider .desire-block { background: rgba(255,109,0,0.08); border: 1px solid rgba(255,109,0,0.15); }
+  #rider .campaign-bottom { color: var(--rider-mid); }
+  #rider .cb-right { border-left-color: rgba(255,109,0,0.12); }
+
+  /* ── CLOSING ── */
+  #insight {
+    background: var(--light);
+    color: var(--dark);
+    padding: 8rem 2rem;
+    text-align: center;
+  }
+
+  .insight-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .insight-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin-bottom: 2rem;
+  }
+
+  .insight-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 2.5rem;
+  }
+
+  .insight-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    opacity: 0.6;
+    max-width: 680px;
+    margin: 0 auto 4rem;
+  }
+
+  /* Archetype comparison */
+  .arq-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    text-align: left;
+    margin-bottom: 4rem;
+  }
+
+  .arq-group {
+    border-radius: 12px;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+
+  .arq-group-title {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .arq-group-title .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+
+  .arq-group-title.apolíneo .dot { background: #1976D2; }
+  .arq-group-title.dionisiaco .dot { background: var(--rider-mid); }
+
+  .arq-campaigns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .arq-camp-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.03);
+    font-size: 0.85rem;
+  }
+
+  .arq-camp-name { font-weight: 600; }
+  .arq-camp-archetype {
+    font-size: 0.72rem;
+    font-style: italic;
+    opacity: 0.5;
+  }
+
+  .dot-brastemp { width: 8px; height: 8px; border-radius: 50%; background: var(--brastemp-mid); display: inline-block; margin-right: 6px; }
+  .dot-valisere { width: 8px; height: 8px; border-radius: 50%; background: var(--valisere-mid); display: inline-block; margin-right: 6px; }
+  .dot-folha    { width: 8px; height: 8px; border-radius: 50%; background: var(--folha-mid); display: inline-block; margin-right: 6px; }
+  .dot-bombril  { width: 8px; height: 8px; border-radius: 50%; background: var(--bombril-mid); display: inline-block; margin-right: 6px; }
+  .dot-rider    { width: 8px; height: 8px; border-radius: 50%; background: var(--rider-mid); display: inline-block; margin-right: 6px; }
+
+  .insight-author {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .insight-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.65;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-title {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.3;
+  }
+
+  .footer-author {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    opacity: 0.6;
+  }
+
+  .footer-inst {
+    font-size: 0.72rem;
+    opacity: 0.25;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-color-bar {
+    display: flex;
+    gap: 3px;
+    margin-top: 2rem;
+    height: 2px;
+    width: 120px;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .footer-color-bar span { flex: 1; }
+
+  /* ── REVEAL ANIMATION ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .campaign-top { padding: 4rem 1.5rem 2rem; }
+    .campaign-divider { margin: 0 1.5rem; }
+    .campaign-body { grid-template-columns: 1fr; }
+    .cb-left, .cb-right { padding: 2rem 1.5rem; }
+    .cb-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+    .campaign-bottom { padding: 1.2rem 1.5rem; flex-wrap: wrap; }
+    .axes-grid { grid-template-columns: 1fr; }
+    .arq-compare { grid-template-columns: 1fr; }
+    #insight { padding: 5rem 1.5rem; }
+    footer { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Campanhas Memoráveis Brasileiras</span>
+  <div class="nav-dots">
+    <a class="nav-dot d-brastemp" href="#brastemp"><span class="nav-dot-circle"></span><span class="nav-dot-label">Brastemp</span></a>
+    <a class="nav-dot d-valisere" href="#valisere"><span class="nav-dot-circle"></span><span class="nav-dot-label">Valisere</span></a>
+    <a class="nav-dot d-folha"   href="#folha"   ><span class="nav-dot-circle"></span><span class="nav-dot-label">Folha SP</span></a>
+    <a class="nav-dot d-bombril" href="#bombril" ><span class="nav-dot-circle"></span><span class="nav-dot-label">Bombril</span></a>
+    <a class="nav-dot d-rider"   href="#rider"   ><span class="nav-dot-circle"></span><span class="nav-dot-label">Rider</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <p class="hero-label reveal">Eduarda Kirch</p>
+  <h1 class="hero-title reveal">Campanhas<br><em>Memoráveis</em><small>Brasileiras</small></h1>
+  <p class="hero-sub reveal">Anos 70 a 90 · Uma análise dos arquétipos,<br>dos desejos e dos rostos que ficaram na memória coletiva</p>
+  <div class="hero-strip reveal">
+    <span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span>
+  </div>
+  <div class="hero-scroll reveal">
+    <div class="scroll-line"></div>
+    <span>role para explorar</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="intro-inner">
+    <p class="intro-eyebrow reveal">O projeto</p>
+    <h2 class="intro-title reveal">Toda campanha memorável desperta um sentimento, um desejo</h2>
+    <p class="intro-body reveal">
+      Na televisão dos anos de ouro, um rosto que se repete na tela deixa de ser apenas imagem e passa a ser um signo: uma qualidade comunicacional que se faz reconhecer como autêntica. É o que Marcelo Salcedo Gomes chama de <em>rosticidade</em>. Cada campanha analisada aqui construiu um rosto próprio na memória coletiva, não necessariamente um rosto humano, mas uma identidade visual e simbólica que o público reconhece instantaneamente décadas depois.<br><br>
+      A análise segue três eixos: o programa hegemônico que foi subvertido, a jogada criativa que gerou ineditismo, e os elementos simbólicos que garantiram permanência cultural. A base teórica articula a <em>Caixa Preta</em> de Flusser, a <em>Aura</em> de Benjamin e os arquétipos de Jung e Mark &amp; Pearson.
+    </p>
+    <div class="axes-grid reveal">
+      <div class="axis-card">
+        <span class="axis-num">01</span>
+        <span class="axis-name">A Caixa Preta</span>
+        <p class="axis-desc">Qual era o programa hegemônico da categoria? O clichê que todos seguiam sem questionar.</p>
+      </div>
+      <div class="axis-card">
+        <span class="axis-num">02</span>
+        <span class="axis-name">O Jogo</span>
+        <p class="axis-desc">Qual foi a jogada subversiva? O movimento inesperado que gerou informação nova, e memória.</p>
+      </div>
+      <div class="axis-card">
+        <span class="axis-num">03</span>
+        <span class="axis-name">Os Elementos</span>
+        <p class="axis-desc">Quais ferramentas foram usadas? Storytelling, arquétipo, modelo AIDA e linguagem visual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BRASTEMP ══════════════ -->
+<section id="brastemp" class="campaign">
+  <div class="campaign-top">
+    <div class="campaign-num">01</div>
+    <p class="campaign-eyebrow reveal">Campanha 01 · 1992</p>
+    <h2 class="campaign-name reveal">Brastemp</h2>
+    <p class="campaign-tagline reveal">"Não é assim uma Brastemp"</p>
+    <p class="campaign-year reveal">Eletrodomésticos · Eixo Apolíneo</p>
+  </div>
+  <div class="campaign-divider"></div>
+  <div class="campaign-body">
+    <div class="cb-left">
+      <div class="arq-badge reveal">
+        <span class="arq-label">Arquétipo</span>
+        <span class="arq-name">O Sábio</span>
+        <span class="arq-axis">Desperta desejo de distinção</span>
+      </div>
+      <span class="block-label">O Programa (Caixa Preta)</span>
+      <h3 class="block-title reveal">Listar atributos técnicos do produto</h3>
+      <p class="block-body reveal">O clichê da categoria de eletrodomésticos era a demonstração funcional: potência, capacidade, eficiência, preço. A dona de casa devia ser convencida de que o produto era tecnicamente superior. Uma publicidade correta, completamente esquecível.</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">O Jogo (A Jogada)</span>
+      <h3 class="block-title reveal">A marca virou o padrão de qualidade</h3>
+      <p class="block-body reveal">Em vez de demonstrar o que a Brastemp faz, a campanha criou um padrão de excelência por negação. "Não é assim uma Brastemp" transformou a marca em substantivo abstrato, sinônimo de excelência em qualquer contexto da vida cotidiana.</p>
+    </div>
+    <div class="cb-right">
+      <span class="block-label">Os Elementos</span>
+      <h3 class="block-title reveal">Storytelling serializado com celebridades</h3>
+      <p class="block-body reveal">Cada comercial era uma micro-história: pessoas em poltronas, com naturalidade aristocrática, descrevendo situações que simplesmente "não são uma Brastemp". O storytelling acumulativo construiu um universo consistente sem nunca precisar mostrar o produto.</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">Subversão do AIDA</span>
+      <p class="block-body reveal">90% da energia foi concentrada no <strong>Desejo</strong>: não pelo produto, mas pela identidade de alguém que tem o discernimento de reconhecer a excelência. A compra tornou-se um rito de passagem para um clube exclusivo de bom gosto.</p>
+      <div class="desire-block reveal">
+        <span class="block-label">O Desejo Evocado</span>
+        <p class="desire-quote">"Quero ser reconhecida como alguém que sabe a diferença."</p>
+      </div>
+    </div>
+  </div>
+  <div class="campaign-bottom">
+    <span>O slogan entrou para o léxico brasileiro</span>
+    <span>1.400+ ocorrências digitais décadas depois</span>
+  </div>
+</section>
+
+<!-- ══════════════ VALISERE ══════════════ -->
+<section id="valisere" class="campaign">
+  <div class="campaign-top">
+    <div class="campaign-num">02</div>
+    <p class="campaign-eyebrow reveal">Campanha 02 · 1987</p>
+    <h2 class="campaign-name reveal">Valisere</h2>
+    <p class="campaign-tagline reveal">"Meu Primeiro Sutiã"</p>
+    <p class="campaign-year reveal">Lingerie · Eixo Dionisíaco</p>
+  </div>
+  <div class="campaign-divider"></div>
+  <div class="campaign-body">
+    <div class="cb-left">
+      <div class="arq-badge reveal">
+        <span class="arq-label">Arquétipo</span>
+        <span class="arq-name">O Inocente</span>
+        <span class="arq-axis">Desperta desejo de reconhecimento</span>
+      </div>
+      <span class="block-label">O Programa (Caixa Preta)</span>
+      <h3 class="block-title reveal">Sensualidade adulta como único eixo</h3>
+      <p class="block-body reveal">Lingerie significava sedução, corpo idealizado, olhar masculino como métrica de valor. A mulher era tratada como objeto do desejo alheio. Um programa eficiente em vender produto, mas incapaz de criar vínculo emocional duradouro.</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">O Jogo (A Jogada)</span>
+      <h3 class="block-title reveal">A inocência no lugar da sedução</h3>
+      <p class="block-body reveal">Washington Olivetto escolheu o polo oposto: uma menina que corre radiante contar à mãe que precisa do primeiro sutiã. Com US$ 86 mil de produção, transformou um produto íntimo em rito de passagem universal, uma experiência que toda mulher carrega na memória.</p>
+    </div>
+    <div class="cb-right">
+      <span class="block-label">Os Elementos</span>
+      <h3 class="block-title reveal">Monomito: o rito de passagem</h3>
+      <p class="block-body reveal">A campanha dramatiza o limiar entre infância e adolescência: um arco narrativo com a densidade de uma história completa em segundos. O sutiã funciona como signo multidimensional: produto, símbolo de maturação e ícone de formação identitária (PIMENTA, 2005).</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">Rosticidade</span>
+      <p class="block-body reveal">O rosto da campanha é o da garota em movimento, puro, ansioso, genuíno. Uma imagem que se fez reconhecer como autêntica porque tocou a memória de uma experiência universal antes de qualquer argumento racional.</p>
+      <div class="desire-block reveal">
+        <span class="block-label">O Desejo Evocado</span>
+        <p class="desire-quote">"Quero ser reconhecida na minha experiência de crescer."</p>
+      </div>
+    </div>
+  </div>
+  <div class="campaign-bottom">
+    <span>Cannes Lions · Múltiplos prêmios 1987</span>
+    <span>45% de retenção espontânea décadas depois</span>
+    <span>"O primeiro a gente nunca esquece"</span>
+  </div>
+</section>
+
+<!-- ══════════════ FOLHA ══════════════ -->
+<section id="folha" class="campaign">
+  <div class="campaign-top">
+    <div class="campaign-num">03</div>
+    <p class="campaign-eyebrow reveal">Campanha 03 · 1987</p>
+    <h2 class="campaign-name reveal">Folha de S.Paulo</h2>
+    <p class="campaign-tagline reveal">"Hitler"</p>
+    <p class="campaign-year reveal">Jornalismo · Eixo Apolíneo</p>
+  </div>
+  <div class="campaign-divider"></div>
+  <div class="campaign-body">
+    <div class="cb-left">
+      <div class="arq-badge reveal">
+        <span class="arq-label">Arquétipo</span>
+        <span class="arq-name">O Sábio</span>
+        <span class="arq-axis">Desperta desejo de integridade</span>
+      </div>
+      <span class="block-label">O Programa (Caixa Preta)</span>
+      <h3 class="block-title reveal">Afirmar o que o jornal publica</h3>
+      <p class="block-body reveal">A publicidade de jornais listava quantidade de reportagens, credenciais, tradição, abrangência. Um discurso voltado para dentro, que dizia ser sério sem provar nada. No Brasil da redemocratização, esse programa era ainda mais insuficiente. A pergunta urgente era "em quem confiar?"</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">O Jogo (A Jogada)</span>
+      <h3 class="block-title reveal">Um elogio a Hitler que a Folha jamais publicaria</h3>
+      <p class="block-body reveal">A peça provoca choque: começa como um elogio formal a um grande homem, usa estética de obituário de jornal e só no final revela que o homenageado é Hitler. A conclusão é direta: a Folha não publicaria isso. Porque a Folha não publica mentiras. O produto aparece pela ética, não pela imagem.</p>
+    </div>
+    <div class="cb-right">
+      <span class="block-label">Análise Semiótica</span>
+      <h3 class="block-title reveal">Tensão entre texto verbal e imagem visual</h3>
+      <p class="block-body reveal">O texto constrói uma narrativa de elogio progressivo, em registro formal e laudatório. A imagem retarda a revelação: pontos negros que se expandem lentamente até revelar o rosto de Hitler. A ruptura cognitiva é irreversível: uma vez lida, a peça não pode ser "deslida" (MANCINI; TROTTA; SOUZA, 2013).</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">Subversão do AIDA</span>
+      <p class="block-body reveal">A <strong>Ação</strong> deixou de ser consumo e tornou-se afirmação moral. Assinar a Folha era um ato de alinhamento ético, sendo a compra uma declaração de valores em um Brasil que acabara de sair da ditadura.</p>
+      <div class="desire-block reveal">
+        <span class="block-label">O Desejo Evocado</span>
+        <p class="desire-quote">"Quero me alinhar a um jornalismo que não mente."</p>
+      </div>
+    </div>
+  </div>
+  <div class="campaign-bottom">
+    <span>Grand Prix de Cannes 1987</span>
+    <span>Dialógica Bakhtiniana · Duas vozes em conflito</span>
+    <span>Contexto: Redemocratização brasileira</span>
+  </div>
+</section>
+
+<!-- ══════════════ BOMBRIL ══════════════ -->
+<section id="bombril" class="campaign">
+  <div class="campaign-top">
+    <div class="campaign-num">04</div>
+    <p class="campaign-eyebrow reveal">Campanha 04 · 1978 a 2004</p>
+    <h2 class="campaign-name reveal">Bombril</h2>
+    <p class="campaign-tagline reveal">"O Garoto Bombril"</p>
+    <p class="campaign-year reveal">Produtos de Limpeza · Eixo Dionisíaco</p>
+  </div>
+  <div class="campaign-divider"></div>
+  <div class="campaign-body">
+    <div class="cb-left">
+      <div class="arq-badge reveal">
+        <span class="arq-label">Arquétipo</span>
+        <span class="arq-name">O Bobo da Corte</span>
+        <span class="arq-axis">Desperta desejo de cumplicidade</span>
+      </div>
+      <span class="block-label">O Programa (Caixa Preta)</span>
+      <h3 class="block-title reveal">A dona de casa como demonstradora obediente</h3>
+      <p class="block-body reveal">Produtos de limpeza exigiam a cuidadora: mulher jovem, sorridente, em ambiente doméstico impecável, validando o produto com autoridade doméstica. Um programa eficiente, mas que infantilizava o público e produzia redundância absoluta.</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">O Jogo (A Jogada)</span>
+      <h3 class="block-title reveal">Um homem que fala com a dona de casa como igual</h3>
+      <p class="block-body reveal">Carlos Moreno: magro, levemente desengonçado, com calvície discreta e sorriso de cúmplice. Não era galã nem autoridade: era o Bobo da Corte que dizia as verdades sem ameaçar. Num único movimento, o programa inteiro foi desmontado.</p>
+    </div>
+    <div class="cb-right">
+      <span class="block-label">Polifonia &amp; Storytelling</span>
+      <h3 class="block-title reveal">26 anos de crônica cômica de costumes</h3>
+      <p class="block-body reveal">337 comerciais diferentes. Cada peça parodiava fatos culturais do momento: políticos, novelas, eventos nacionais. A campanha funcionava como uma coluna de jornal: o público voltava toda semana para ver o que o Garoto Bombril diria desta vez (COSTA, 2011).</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">Rosticidade</span>
+      <p class="block-body reveal">O rosto de Carlos Moreno tornou-se o rosto da marca. Quando o personagem foi "demitido" em 1995 dentro de um comercial, o público reagiu como se fosse real. A rosticidade aqui alcançou seu grau máximo: o rosto do ator e a identidade da marca tornaram-se inseparáveis.</p>
+      <div class="desire-block reveal">
+        <span class="block-label">O Desejo Evocado</span>
+        <p class="desire-quote">"Quero pertencer a essa comunidade que entende a piada."</p>
+      </div>
+    </div>
+  </div>
+  <div class="campaign-bottom">
+    <span>Guinness Book 1994 · Maior série publicitária do mundo</span>
+    <span>337 comerciais · 26 anos</span>
+    <span>"Pintou sujeira? Passa Bombril."</span>
+  </div>
+</section>
+
+<!-- ══════════════ RIDER ══════════════ -->
+<section id="rider" class="campaign">
+  <div class="campaign-top">
+    <div class="campaign-num">05</div>
+    <p class="campaign-eyebrow reveal">Campanha 05 · 1993 a 2004</p>
+    <h2 class="campaign-name reveal">Rider</h2>
+    <p class="campaign-tagline reveal">"Férias para os Pés"</p>
+    <p class="campaign-year reveal">Calçados · Eixo Dionisíaco</p>
+  </div>
+  <div class="campaign-divider"></div>
+  <div class="campaign-body">
+    <div class="cb-left">
+      <div class="arq-badge reveal">
+        <span class="arq-label">Arquétipo</span>
+        <span class="arq-name">Fora-da-Lei</span>
+        <span class="arq-axis">Desperta desejo de liberdade</span>
+      </div>
+      <span class="block-label">O Programa (Caixa Preta)</span>
+      <h3 class="block-title reveal">Praia, corpo jovem e hedonismo sazonal</h3>
+      <p class="block-body reveal">O clichê do calçado de verão era previsível: sol, areia, beleza corporal, verão idealizado. Uma publicidade que existia quatro meses por ano e desaparecia do imaginário quando a estação terminava. Sazonal por natureza, portanto perecível.</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">O Jogo (A Jogada)</span>
+      <h3 class="block-title reveal">A música brasileira como linguagem de identidade</h3>
+      <p class="block-body reveal">14 VTs musicais com regravações de MPB: Tim Maia, Paralamas, Rita Lee, Barão Vermelho, Skank, Jorge Benjor. A Rider deixou de vender sandália e passou a vender um repertório cultural: a brasilidade carioca, a atitude e a autenticidade que cada artista encarnava à sua maneira.</p>
+    </div>
+    <div class="cb-right">
+      <span class="block-label">Linguagem do Videoclipe</span>
+      <h3 class="block-title reveal">A publicidade que virou produto cultural</h3>
+      <p class="block-body reveal">Os filmes eram veiculados como comerciais mas as músicas tocavam nas rádios como faixas artísticas. Os CDs <em>Rider Hits</em> chegaram a 250 mil cópias. A campanha rompeu a fronteira entre publicidade e indústria fonográfica, gerando consumo voluntário da marca (SOUTO; SOARES, 2005).</p>
+      <div class="block-spacer"></div>
+      <span class="block-label">Subversão do AIDA</span>
+      <p class="block-body reveal">O <strong>Interesse</strong> foi sustentado pelo prazer genuíno que a música provocava, e o consumidor assistia porque queria. A sandália era presença constante e deliberada: aparecia nos pés, nas mãos, como instrumento de dança, como acessório de cena. Quanto mais presente visualmente, mais se tornava símbolo de uma atitude.</p>
+      <div class="desire-block reveal">
+        <span class="block-label">O Desejo Evocado</span>
+        <p class="desire-quote">"Quero ser livre, autêntico e brasileiro do jeito certo."</p>
+      </div>
+    </div>
+  </div>
+  <div class="campaign-bottom">
+    <span>14 VTs musicais · W/Brasil · 1993 a 2004</span>
+    <span>CDs Rider Hits · 250 mil cópias vendidas</span>
+  </div>
+</section>
+
+<!-- CLOSING INSIGHT -->
+<section id="insight">
+  <div class="insight-inner">
+    <p class="insight-eyebrow reveal">O mapa das conexões</p>
+    <h2 class="insight-title reveal">O que todas<br>têm em comum</h2>
+    <p class="insight-body reveal">
+      Independentemente do produto, do formato ou do arquétipo, as cinco campanhas compartilham uma operação de fundo: todas identificaram o programa hegemônico da sua categoria e o subverteram com precisão. E todas despertaram um <strong>desejo</strong> que preexistia no consumidor: de pertencer, de ser reconhecido, de se identificar, de ser livre.
+    </p>
+
+    <div class="arq-compare reveal">
+      <div class="arq-group">
+        <div class="arq-group-title apolíneo">
+          <span class="dot" style="background:#1976D2"></span>
+          <span style="color:#1976D2; font-size:0.6rem; letter-spacing:0.2em;">EIXO APOLÍNEO · Razão &amp; Ordem</span>
+        </div>
+        <div class="arq-campaigns">
+          <div class="arq-camp-row">
+            <span class="arq-camp-name"><span class="dot-brastemp"></span>Brastemp</span>
+            <span class="arq-camp-archetype">O Sábio · desejo de distinção</span>
+          </div>
+          <div class="arq-camp-row">
+            <span class="arq-camp-name"><span class="dot-folha"></span>Folha de S.Paulo</span>
+            <span class="arq-camp-archetype">O Sábio · desejo de integridade</span>
+          </div>
+        </div>
+      </div>
+      <div class="arq-group">
+        <div class="arq-group-title dionisiaco">
+          <span class="dot" style="background:var(--rider-mid)"></span>
+          <span style="color:var(--rider-mid); font-size:0.6rem; letter-spacing:0.2em;">EIXO DIONISÍACO · Emoção &amp; Mito</span>
+        </div>
+        <div class="arq-campaigns">
+          <div class="arq-camp-row">
+            <span class="arq-camp-name"><span class="dot-valisere"></span>Valisere</span>
+            <span class="arq-camp-archetype">O Inocente · desejo de reconhecimento</span>
+          </div>
+          <div class="arq-camp-row">
+            <span class="arq-camp-name"><span class="dot-bombril"></span>Bombril</span>
+            <span class="arq-camp-archetype">O Bobo · desejo de cumplicidade</span>
+          </div>
+          <div class="arq-camp-row">
+            <span class="arq-camp-name"><span class="dot-rider"></span>Rider</span>
+            <span class="arq-camp-archetype">Fora-da-Lei · desejo de liberdade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="insight-quote reveal">
+      A memorabilidade nunca foi uma questão de orçamento ou tecnologia.<br>
+      Foi sempre uma questão de coragem criativa.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-title">Trabalho de Conclusão de Curso</p>
+  <p class="footer-author">Eduarda Kirch</p>
+  <p class="footer-inst">Graduação em Publicidade e Propaganda · UNISINOS · Porto Alegre · 2025</p>
+  <div class="footer-color-bar">
+    <span style="background:var(--brastemp-mid)"></span>
+    <span style="background:var(--valisere-mid)"></span>
+    <span style="background:var(--folha-mid)"></span>
+    <span style="background:var(--bombril-mid)"></span>
+    <span style="background:var(--rider-mid)"></span>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, (entry.target.dataset.delay || 0));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  reveals.forEach((el, i) => {
+    el.dataset.delay = (i % 5) * 80;
+    observer.observe(el);
+  });
+
+  // Active nav dot on scroll
+  const sections = ['brastemp', 'valisere', 'folha', 'bombril', 'rider'];
+  const dots = document.querySelectorAll('.nav-dot');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        dots.forEach(d => { d.style.opacity = '0.6'; d.style.fontWeight = ''; });
+        const dot = document.querySelector(`.d-${entry.target.id}`);
+        if (dot) { dot.style.opacity = '1'; dot.style.fontWeight = '700'; }
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+</script>
+</body>
+</html>

@@ -28,9 +28,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Inter', sans-serif;
     background: var(--dark);
@@ -79,8 +77,7 @@
   .nav-dot:hover { opacity: 1; }
 
   .nav-dot-circle {
-    width: 8px;
-    height: 8px;
+    width: 8px; height: 8px;
     border-radius: 50%;
     flex-shrink: 0;
     display: block;
@@ -98,6 +95,25 @@
   .nav-dot.d-folha    .nav-dot-circle { background: var(--folha-mid); }
   .nav-dot.d-bombril  .nav-dot-circle { background: var(--bombril-mid); }
   .nav-dot.d-rider    .nav-dot-circle { background: var(--rider-mid); }
+
+  .nav-refs-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .nav-refs-btn:hover {
+    color: rgba(255,255,255,0.9);
+    border-color: rgba(255,255,255,0.4);
+  }
 
   /* ── HERO ── */
   #hero {
@@ -134,12 +150,7 @@
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
   }
-
-  .hero-title em {
-    font-style: italic;
-    opacity: 1;
-  }
-
+  .hero-title em { font-style: italic; opacity: 1; }
   .hero-title small {
     display: block;
     font-size: 0.38em;
@@ -169,10 +180,7 @@
     overflow: hidden;
     margin-bottom: 4rem;
   }
-  .hero-strip span {
-    flex: 1;
-    display: block;
-  }
+  .hero-strip span { flex: 1; display: block; }
   .s1 { background: var(--brastemp-mid); }
   .s2 { background: var(--valisere-mid); }
   .s3 { background: var(--folha-mid); }
@@ -210,10 +218,7 @@
     align-items: center;
   }
 
-  .intro-inner {
-    max-width: 760px;
-    text-align: center;
-  }
+  .intro-inner { max-width: 760px; text-align: center; }
 
   .intro-eyebrow {
     font-size: 0.65rem;
@@ -248,10 +253,7 @@
     text-align: left;
     margin-top: 1rem;
   }
-  .axis-card {
-    background: white;
-    padding: 1.5rem;
-  }
+  .axis-card { background: white; padding: 1.5rem; }
   .axis-num {
     font-size: 1.8rem;
     font-weight: 800;
@@ -268,17 +270,10 @@
     display: block;
     color: var(--dark);
   }
-  .axis-desc {
-    font-size: 0.82rem;
-    line-height: 1.6;
-    opacity: 0.55;
-  }
+  .axis-desc { font-size: 0.82rem; line-height: 1.6; opacity: 0.55; }
 
   /* ── CAMPAIGN SECTIONS ── */
-  .campaign {
-    position: relative;
-    overflow: hidden;
-  }
+  .campaign { position: relative; overflow: hidden; }
 
   .campaign-top {
     padding: 5rem 3rem 3rem;
@@ -291,8 +286,7 @@
     font-weight: 900;
     line-height: 0.8;
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 2rem; right: 2rem;
     opacity: 0.06;
     pointer-events: none;
     user-select: none;
@@ -311,8 +305,7 @@
   .campaign-eyebrow::before {
     content: '';
     display: inline-block;
-    width: 24px;
-    height: 2px;
+    width: 24px; height: 2px;
     background: currentColor;
   }
 
@@ -336,9 +329,37 @@
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     opacity: 0.3;
+    margin-bottom: 1.2rem;
   }
 
-  /* Divider line */
+  /* YouTube button */
+  .yt-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.6;
+    transition: opacity 0.3s, border-color 0.3s, background 0.3s;
+    cursor: pointer;
+    margin-top: 0.2rem;
+  }
+  .yt-btn:hover {
+    opacity: 1;
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+  }
+  .yt-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* Divider */
   .campaign-divider {
     height: 1px;
     margin: 0 3rem;
@@ -352,13 +373,8 @@
     gap: 0;
   }
 
-  .cb-left, .cb-right {
-    padding: 3rem;
-  }
-
-  .cb-right {
-    border-left: 1px solid rgba(255,255,255,0.08);
-  }
+  .cb-left, .cb-right { padding: 3rem; }
+  .cb-right { border-left: 1px solid rgba(255,255,255,0.08); }
 
   .block-label {
     font-size: 0.58rem;
@@ -395,30 +411,12 @@
     border-radius: 8px;
     margin-bottom: 2rem;
   }
-  .arq-label {
-    font-size: 0.55rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    opacity: 0.6;
-  }
-  .arq-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  .arq-axis {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    opacity: 0.5;
-  }
+  .arq-label { font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; opacity: 0.6; }
+  .arq-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; }
+  .arq-axis { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5; }
 
   /* Desire block */
-  .desire-block {
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-top: 1rem;
-  }
+  .desire-block { border-radius: 10px; padding: 1.5rem; margin-top: 1rem; }
   .desire-block .block-label { margin-bottom: 0.5rem; }
   .desire-quote {
     font-family: 'Playfair Display', serif;
@@ -428,7 +426,7 @@
     opacity: 0.9;
   }
 
-  /* Bottom bar per campaign */
+  /* Bottom bar */
   .campaign-bottom {
     padding: 1.5rem 3rem;
     display: flex;
@@ -443,7 +441,7 @@
   .campaign-bottom span::before { content: '· '; }
   .campaign-bottom span:first-child::before { content: ''; }
 
-  /* ── INDIVIDUAL CAMPAIGN COLORS ── */
+  /* ── CAMPAIGN COLORS ── */
   #brastemp { background: #0a1a0a; color: #E8F5E9; }
   #brastemp .campaign-num { color: var(--brastemp-mid); }
   #brastemp .arq-badge { background: rgba(76,175,80,0.15); border: 1px solid rgba(76,175,80,0.25); }
@@ -487,10 +485,7 @@
     text-align: center;
   }
 
-  .insight-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
+  .insight-inner { max-width: 900px; margin: 0 auto; }
 
   .insight-eyebrow {
     font-size: 0.65rem;
@@ -516,7 +511,6 @@
     margin: 0 auto 4rem;
   }
 
-  /* Archetype comparison */
   .arq-compare {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -543,19 +537,11 @@
     gap: 0.5rem;
   }
 
-  .arq-group-title .dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-  }
-
-  .arq-group-title.apolíneo .dot { background: #1976D2; }
+  .arq-group-title .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .arq-group-title.apolineo .dot { background: #1976D2; }
   .arq-group-title.dionisiaco .dot { background: var(--rider-mid); }
 
-  .arq-campaigns {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+  .arq-campaigns { display: flex; flex-direction: column; gap: 0.8rem; }
 
   .arq-camp-row {
     display: flex;
@@ -568,26 +554,13 @@
   }
 
   .arq-camp-name { font-weight: 600; }
-  .arq-camp-archetype {
-    font-size: 0.72rem;
-    font-style: italic;
-    opacity: 0.5;
-  }
+  .arq-camp-archetype { font-size: 0.72rem; font-style: italic; opacity: 0.5; }
 
   .dot-brastemp { width: 8px; height: 8px; border-radius: 50%; background: var(--brastemp-mid); display: inline-block; margin-right: 6px; }
   .dot-valisere { width: 8px; height: 8px; border-radius: 50%; background: var(--valisere-mid); display: inline-block; margin-right: 6px; }
   .dot-folha    { width: 8px; height: 8px; border-radius: 50%; background: var(--folha-mid); display: inline-block; margin-right: 6px; }
   .dot-bombril  { width: 8px; height: 8px; border-radius: 50%; background: var(--bombril-mid); display: inline-block; margin-right: 6px; }
   .dot-rider    { width: 8px; height: 8px; border-radius: 50%; background: var(--rider-mid); display: inline-block; margin-right: 6px; }
-
-  .insight-author {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0.35;
-    margin-top: 1rem;
-    font-family: 'Inter', sans-serif;
-  }
 
   .insight-quote {
     font-family: 'Playfair Display', serif;
@@ -612,24 +585,9 @@
     gap: 1rem;
   }
 
-  .footer-title {
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    opacity: 0.3;
-  }
-
-  .footer-author {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    opacity: 0.6;
-  }
-
-  .footer-inst {
-    font-size: 0.72rem;
-    opacity: 0.25;
-    letter-spacing: 0.1em;
-  }
+  .footer-title { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.3; }
+  .footer-author { font-family: 'Playfair Display', serif; font-size: 1.1rem; opacity: 0.6; }
+  .footer-inst { font-size: 0.72rem; opacity: 0.25; letter-spacing: 0.1em; }
 
   .footer-color-bar {
     display: flex;
@@ -642,20 +600,91 @@
   }
   .footer-color-bar span { flex: 1; }
 
-  /* ── REVEAL ANIMATION ── */
+  /* ── REFERENCES DRAWER ── */
+  .refs-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .refs-overlay.open { opacity: 1; pointer-events: all; }
+
+  .refs-drawer {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 201;
+    background: #111e2d;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px 16px 0 0;
+    padding: 2.5rem 3rem 3rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .refs-drawer.open { transform: translateY(0); }
+
+  .refs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .refs-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .refs-close {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .refs-close:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+  .refs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .refs-list li {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    padding-left: 1.2rem;
+    border-left: 2px solid rgba(255,255,255,0.08);
+  }
+
+  .refs-list li strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+  /* ── REVEAL ── */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
+    .nav-refs-btn { display: none; }
     .campaign-top { padding: 4rem 1.5rem 2rem; }
     .campaign-divider { margin: 0 1.5rem; }
     .campaign-body { grid-template-columns: 1fr; }
@@ -666,6 +695,7 @@
     .arq-compare { grid-template-columns: 1fr; }
     #insight { padding: 5rem 1.5rem; }
     footer { padding: 3rem 1.5rem; }
+    .refs-drawer { padding: 2rem 1.5rem 2.5rem; }
   }
 </style>
 </head>
@@ -677,9 +707,10 @@
   <div class="nav-dots">
     <a class="nav-dot d-brastemp" href="#brastemp"><span class="nav-dot-circle"></span><span class="nav-dot-label">Brastemp</span></a>
     <a class="nav-dot d-valisere" href="#valisere"><span class="nav-dot-circle"></span><span class="nav-dot-label">Valisere</span></a>
-    <a class="nav-dot d-folha"   href="#folha"   ><span class="nav-dot-circle"></span><span class="nav-dot-label">Folha SP</span></a>
-    <a class="nav-dot d-bombril" href="#bombril" ><span class="nav-dot-circle"></span><span class="nav-dot-label">Bombril</span></a>
-    <a class="nav-dot d-rider"   href="#rider"   ><span class="nav-dot-circle"></span><span class="nav-dot-label">Rider</span></a>
+    <a class="nav-dot d-folha"    href="#folha"   ><span class="nav-dot-circle"></span><span class="nav-dot-label">Folha SP</span></a>
+    <a class="nav-dot d-bombril"  href="#bombril" ><span class="nav-dot-circle"></span><span class="nav-dot-label">Bombril</span></a>
+    <a class="nav-dot d-rider"    href="#rider"   ><span class="nav-dot-circle"></span><span class="nav-dot-label">Rider</span></a>
+    <button class="nav-refs-btn" onclick="openRefs()">Referências</button>
   </div>
 </nav>
 
@@ -688,7 +719,7 @@
   <div class="hero-bg"></div>
   <p class="hero-label reveal">Eduarda Kirch</p>
   <h1 class="hero-title reveal">Campanhas<br><em>Memoráveis</em><small>Brasileiras</small></h1>
-  <p class="hero-sub reveal">Anos 70 - 90 · Uma análise dos arquétipos e<br>dos desejos que ficaram na memória coletiva</p>
+  <p class="hero-sub reveal">Anos 70 a 90 · Uma análise dos arquétipos<br>e dos desejos que ficaram na memória coletiva</p>
   <div class="hero-strip reveal">
     <span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span>
   </div>
@@ -704,24 +735,24 @@
     <p class="intro-eyebrow reveal">O projeto</p>
     <h2 class="intro-title reveal">Toda campanha memorável desperta um sentimento, um desejo</h2>
     <p class="intro-body reveal">
-      Na televisão dos anos de ouro, um rosto que se repete na tela deixa de ser apenas imagem e passa a ser um signo: uma qualidade comunicacional que se faz reconhecer como autêntica. É o que Marcelo Salcedo Gomes chama de <em>rosticidade</em>. Cada campanha analisada aqui construiu um rosto próprio na memória coletiva, não necessariamente um rosto humano, mas uma identidade visual e simbólica que o público reconhece instantaneamente décadas depois.<br><br>
-      A análise segue três eixos: o programa hegemônico que foi subvertido, a jogada criativa que gerou ineditismo, e os elementos simbólicos que garantiram permanência cultural. A base teórica articula a <em>Caixa Preta</em> de Flusser, a <em>Aura</em> de Benjamin e os arquétipos de Jung e Mark &amp; Pearson.
+      Cada campanha analisada aqui construiu uma identidade própria na memória coletiva, não necessariamente um rosto humano, mas uma presença visual e simbólica que o público reconhece instantaneamente décadas depois. O que ficou não foi o produto. Foi o que ele despertava.<br><br>
+      A análise segue três eixos: o padrão que existia na categoria e que todos seguiam, a jogada criativa que rompeu com esse padrão, e as ferramentas que garantiram que essa ruptura ficasse na memória.
     </p>
     <div class="axes-grid reveal">
       <div class="axis-card">
         <span class="axis-num">01</span>
         <span class="axis-name">A Caixa Preta</span>
-        <p class="axis-desc">Qual era o programa hegemônico da categoria? O clichê que todos seguiam sem questionar.</p>
+        <p class="axis-desc">Qual era o padrão da categoria? O clichê que todos seguiam sem questionar.</p>
       </div>
       <div class="axis-card">
         <span class="axis-num">02</span>
         <span class="axis-name">O Jogo</span>
-        <p class="axis-desc">Qual foi a jogada subversiva? O movimento inesperado que gerou informação nova, e memória.</p>
+        <p class="axis-desc">Qual foi a jogada? O movimento inesperado que gerou algo novo, e memória.</p>
       </div>
       <div class="axis-card">
         <span class="axis-num">03</span>
         <span class="axis-name">Os Elementos</span>
-        <p class="axis-desc">Quais ferramentas foram usadas? Storytelling, arquétipo, modelo AIDA e linguagem visual.</p>
+        <p class="axis-desc">Quais ferramentas foram usadas? Narrativa, arquétipo e linguagem visual.</p>
       </div>
     </div>
   </div>
@@ -735,6 +766,10 @@
     <h2 class="campaign-name reveal">Brastemp</h2>
     <p class="campaign-tagline reveal">"Não é assim uma Brastemp"</p>
     <p class="campaign-year reveal">Eletrodomésticos · Eixo Apolíneo</p>
+    <a class="yt-btn reveal" href="https://www.youtube.com/watch?v=NnLjj2G0hx4" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.75 12.17 12.17 0 0 0-8 .38 12.36 12.36 0 0 0-4.18 2.73A11.89 11.89 0 0 0 1 12a11.89 11.89 0 0 0 2.64 4.95 12.36 12.36 0 0 0 4.18 2.73 12.17 12.17 0 0 0 8 .38 4.83 4.83 0 0 1 3.77-2.75A5 5 0 0 0 22 12a5 5 0 0 0-2.41-5.31zM10 15.5v-7l6 3.5z"/></svg>
+      Assistir às peças
+    </a>
   </div>
   <div class="campaign-divider"></div>
   <div class="campaign-body">
@@ -746,19 +781,19 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">Listar atributos técnicos do produto</h3>
-      <p class="block-body reveal">O clichê da categoria de eletrodomésticos era a demonstração funcional: potência, capacidade, eficiência, preço. A dona de casa devia ser convencida de que o produto era tecnicamente superior. Uma publicidade correta, completamente esquecível.</p>
+      <p class="block-body reveal">O padrão da categoria de eletrodomésticos era a demonstração funcional: potência, capacidade, eficiência, preço. A dona de casa precisava ser convencida de que o produto era tecnicamente superior. Uma publicidade correta e completamente esquecível.</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">A marca virou o padrão de qualidade</h3>
-      <p class="block-body reveal">Em vez de demonstrar o que a Brastemp faz, a campanha criou um padrão de excelência por negação. "Não é assim uma Brastemp" transformou a marca em substantivo abstrato, sinônimo de excelência em qualquer contexto da vida cotidiana.</p>
+      <p class="block-body reveal">Em vez de demonstrar o que a Brastemp faz, a campanha criou um padrão de excelência por negação. "Não é assim uma Brastemp" transformou a marca em sinônimo de excelência em qualquer contexto da vida cotidiana.</p>
     </div>
     <div class="cb-right">
       <span class="block-label">Os Elementos</span>
       <h3 class="block-title reveal">Storytelling serializado com celebridades</h3>
-      <p class="block-body reveal">Cada comercial era uma micro-história: pessoas em poltronas, com naturalidade aristocrática, descrevendo situações que simplesmente "não são uma Brastemp". O storytelling acumulativo construiu um universo consistente sem nunca precisar mostrar o produto.</p>
+      <p class="block-body reveal">Cada comercial era uma micro-história: pessoas sentadas em poltronas, com tranquilidade aristocrática, descrevendo situações que simplesmente "não são uma Brastemp". O acúmulo de histórias construiu um universo consistente sem nunca precisar mostrar o produto em ação.</p>
       <div class="block-spacer"></div>
-      <span class="block-label">Subversão do AIDA</span>
-      <p class="block-body reveal">90% da energia foi concentrada no <strong>Desejo</strong>: não pelo produto, mas pela identidade de alguém que tem o discernimento de reconhecer a excelência. A compra tornou-se um rito de passagem para um clube exclusivo de bom gosto.</p>
+      <span class="block-label">A Subversão</span>
+      <p class="block-body reveal">A energia foi concentrada no <strong>Desejo</strong>: não pelo produto, mas pela identidade de alguém que tem o discernimento de reconhecer a excelência. A compra tornou-se um rito de passagem para um clube exclusivo de bom gosto.</p>
       <div class="desire-block reveal">
         <span class="block-label">O Desejo Evocado</span>
         <p class="desire-quote">"Quero ser reconhecida como alguém que sabe a diferença."</p>
@@ -779,6 +814,10 @@
     <h2 class="campaign-name reveal">Valisere</h2>
     <p class="campaign-tagline reveal">"Meu Primeiro Sutiã"</p>
     <p class="campaign-year reveal">Lingerie · Eixo Dionisíaco</p>
+    <a class="yt-btn reveal" href="https://www.youtube.com/watch?v=iQ9EjVwVvFQ" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.75 12.17 12.17 0 0 0-8 .38 12.36 12.36 0 0 0-4.18 2.73A11.89 11.89 0 0 0 1 12a11.89 11.89 0 0 0 2.64 4.95 12.36 12.36 0 0 0 4.18 2.73 12.17 12.17 0 0 0 8 .38 4.83 4.83 0 0 1 3.77-2.75A5 5 0 0 0 22 12a5 5 0 0 0-2.41-5.31zM10 15.5v-7l6 3.5z"/></svg>
+      Assistir às peças
+    </a>
   </div>
   <div class="campaign-divider"></div>
   <div class="campaign-body">
@@ -790,18 +829,18 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">Sensualidade adulta como único eixo</h3>
-      <p class="block-body reveal">Lingerie significava sedução, corpo idealizado, olhar masculino como métrica de valor. A mulher era tratada como objeto do desejo alheio. Um programa eficiente em vender produto, mas incapaz de criar vínculo emocional duradouro.</p>
+      <p class="block-body reveal">Lingerie significava sedução, corpo idealizado, olhar masculino como métrica de valor. A mulher era tratada como objeto do desejo alheio. Um padrão eficiente em vender produto, mas incapaz de criar um vínculo emocional verdadeiro.</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">A inocência no lugar da sedução</h3>
-      <p class="block-body reveal">Washington Olivetto escolheu o polo oposto: uma menina que corre radiante contar à mãe que precisa do primeiro sutiã. Com US$ 86 mil de produção, transformou um produto íntimo em rito de passagem universal, uma experiência que toda mulher carrega na memória.</p>
+      <p class="block-body reveal">Washington Olivetto escolheu o polo oposto: uma menina que corre radiante contar à mãe que precisa do primeiro sutiã. Com apenas US$ 86 mil de produção, transformou um produto íntimo em rito de passagem universal — uma experiência que toda mulher carrega na memória.</p>
     </div>
     <div class="cb-right">
       <span class="block-label">Os Elementos</span>
-      <h3 class="block-title reveal">Monomito: o rito de passagem</h3>
-      <p class="block-body reveal">A campanha dramatiza o limiar entre infância e adolescência: um arco narrativo com a densidade de uma história completa em segundos. O sutiã funciona como signo multidimensional: produto, símbolo de maturação e ícone de formação identitária (PIMENTA, 2005).</p>
+      <h3 class="block-title reveal">O rito de passagem</h3>
+      <p class="block-body reveal">A campanha conta a história do limiar entre infância e adolescência: um arco narrativo com a densidade de uma história completa em segundos. O sutiã deixa de ser produto e passa a ser símbolo de uma transformação.</p>
       <div class="block-spacer"></div>
-      <span class="block-label">Rosticidade</span>
+      <span class="block-label">A Identidade Visual</span>
       <p class="block-body reveal">O rosto da campanha é o da garota em movimento, puro, ansioso, genuíno. Uma imagem que se fez reconhecer como autêntica porque tocou a memória de uma experiência universal antes de qualquer argumento racional.</p>
       <div class="desire-block reveal">
         <span class="block-label">O Desejo Evocado</span>
@@ -824,6 +863,10 @@
     <h2 class="campaign-name reveal">Folha de S.Paulo</h2>
     <p class="campaign-tagline reveal">"Hitler"</p>
     <p class="campaign-year reveal">Jornalismo · Eixo Apolíneo</p>
+    <a class="yt-btn reveal" href="https://www.youtube.com/watch?v=nd9R7ZxhjJ8" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.75 12.17 12.17 0 0 0-8 .38 12.36 12.36 0 0 0-4.18 2.73A11.89 11.89 0 0 0 1 12a11.89 11.89 0 0 0 2.64 4.95 12.36 12.36 0 0 0 4.18 2.73 12.17 12.17 0 0 0 8 .38 4.83 4.83 0 0 1 3.77-2.75A5 5 0 0 0 22 12a5 5 0 0 0-2.41-5.31zM10 15.5v-7l6 3.5z"/></svg>
+      Assistir às peças
+    </a>
   </div>
   <div class="campaign-divider"></div>
   <div class="campaign-body">
@@ -835,19 +878,19 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">Afirmar o que o jornal publica</h3>
-      <p class="block-body reveal">A publicidade de jornais listava quantidade de reportagens, credenciais, tradição, abrangência. Um discurso voltado para dentro, que dizia ser sério sem provar nada. No Brasil da redemocratização, esse programa era ainda mais insuficiente. A pergunta urgente era "em quem confiar?"</p>
+      <p class="block-body reveal">A publicidade de jornais listava credenciais, tradição, abrangência. Um discurso voltado para dentro, que dizia ser sério sem provar nada. No Brasil da redemocratização, esse padrão era ainda mais insuficiente, a pergunta urgente era "em quem confiar?"</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
-      <h3 class="block-title reveal">Um elogio a Hitler que a Folha jamais publicaria</h3>
-      <p class="block-body reveal">A peça provoca choque: começa como um elogio formal a um grande homem, usa estética de obituário de jornal e só no final revela que o homenageado é Hitler. A conclusão é direta: a Folha não publicaria isso. Porque a Folha não publica mentiras. O produto aparece pela ética, não pela imagem.</p>
+      <h3 class="block-title reveal">Mostrar o que a Folha jamais publicaria</h3>
+      <p class="block-body reveal">A peça começa como um elogio formal a um grande homem, listando realizações e capacidade de mobilizar massas. Só no final revela que o homenageado é Hitler. A conclusão é direta: a Folha não publicaria isso. O produto aparece pela ética, não pela imagem.</p>
     </div>
     <div class="cb-right">
-      <span class="block-label">Análise Semiótica</span>
-      <h3 class="block-title reveal">Tensão entre texto verbal e imagem visual</h3>
-      <p class="block-body reveal">O texto constrói uma narrativa de elogio progressivo, em registro formal e laudatório. A imagem retarda a revelação: pontos negros que se expandem lentamente até revelar o rosto de Hitler. A ruptura cognitiva é irreversível: uma vez lida, a peça não pode ser "deslida" (MANCINI; TROTTA; SOUZA, 2013).</p>
+      <span class="block-label">Os Elementos</span>
+      <h3 class="block-title reveal">A tensão entre texto e imagem</h3>
+      <p class="block-body reveal">O texto constrói uma expectativa positiva enquanto a imagem retarda a revelação, pontos negros que se expandem lentamente até revelar o rosto de Hitler. A ruptura é irreversível: uma vez lida, a peça não pode ser "deslida". Essa experiência é exatamente o que garante que ela nunca seja esquecida.</p>
       <div class="block-spacer"></div>
-      <span class="block-label">Subversão do AIDA</span>
-      <p class="block-body reveal">A <strong>Ação</strong> deixou de ser consumo e tornou-se afirmação moral. Assinar a Folha era um ato de alinhamento ético, sendo a compra uma declaração de valores em um Brasil que acabara de sair da ditadura.</p>
+      <span class="block-label">A Subversão</span>
+      <p class="block-body reveal">A <strong>Ação</strong> deixou de ser consumo e tornou-se afirmação moral. Assinar a Folha era uma declaração de valores em um Brasil que acabara de sair da ditadura.</p>
       <div class="desire-block reveal">
         <span class="block-label">O Desejo Evocado</span>
         <p class="desire-quote">"Quero me alinhar a um jornalismo que não mente."</p>
@@ -856,7 +899,6 @@
   </div>
   <div class="campaign-bottom">
     <span>Grand Prix de Cannes 1987</span>
-    <span>Dialógica Bakhtiniana · Duas vozes em conflito</span>
     <span>Contexto: Redemocratização brasileira</span>
   </div>
 </section>
@@ -869,6 +911,10 @@
     <h2 class="campaign-name reveal">Bombril</h2>
     <p class="campaign-tagline reveal">"O Garoto Bombril"</p>
     <p class="campaign-year reveal">Produtos de Limpeza · Eixo Dionisíaco</p>
+    <a class="yt-btn reveal" href="https://www.youtube.com/watch?v=NIYC8imSvpE" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.75 12.17 12.17 0 0 0-8 .38 12.36 12.36 0 0 0-4.18 2.73A11.89 11.89 0 0 0 1 12a11.89 11.89 0 0 0 2.64 4.95 12.36 12.36 0 0 0 4.18 2.73 12.17 12.17 0 0 0 8 .38 4.83 4.83 0 0 1 3.77-2.75A5 5 0 0 0 22 12a5 5 0 0 0-2.41-5.31zM10 15.5v-7l6 3.5z"/></svg>
+      Assistir às peças
+    </a>
   </div>
   <div class="campaign-divider"></div>
   <div class="campaign-body">
@@ -880,19 +926,19 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">A dona de casa como demonstradora obediente</h3>
-      <p class="block-body reveal">Produtos de limpeza exigiam a cuidadora: mulher jovem, sorridente, em ambiente doméstico impecável, validando o produto com autoridade doméstica. Um programa eficiente, mas que infantilizava o público e produzia redundância absoluta.</p>
+      <p class="block-body reveal">Produtos de limpeza exigiam a cuidadora: mulher jovem, sorridente, em ambiente doméstico impecável, validando o produto. Um padrão que infantilizava o público e produzia redundância total — as mulheres já haviam percebido isso há muito tempo.</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">Um homem que fala com a dona de casa como igual</h3>
-      <p class="block-body reveal">Carlos Moreno: magro, levemente desengonçado, com calvície discreta e sorriso de cúmplice. Não era galã nem autoridade: era o Bobo da Corte que dizia as verdades sem ameaçar. Num único movimento, o programa inteiro foi desmontado.</p>
+      <p class="block-body reveal">Carlos Moreno: magro, levemente desengonçado, calvície discreta e sorriso de cúmplice. Não era galã nem autoridade — era alguém que olhava direto para a câmera e falava como velho amigo. Num único movimento, o padrão inteiro foi desmontado.</p>
     </div>
     <div class="cb-right">
-      <span class="block-label">Polifonia &amp; Storytelling</span>
+      <span class="block-label">Os Elementos</span>
       <h3 class="block-title reveal">26 anos de crônica cômica de costumes</h3>
-      <p class="block-body reveal">337 comerciais diferentes. Cada peça parodiava fatos culturais do momento: políticos, novelas, eventos nacionais. A campanha funcionava como uma coluna de jornal: o público voltava toda semana para ver o que o Garoto Bombril diria desta vez (COSTA, 2011).</p>
+      <p class="block-body reveal">337 comerciais diferentes. Cada peça parodiava fatos culturais do momento, políticos, novelas, eventos nacionais. A campanha funcionava como uma coluna de jornal: o público voltava toda semana para ver o que o Garoto Bombril diria desta vez.</p>
       <div class="block-spacer"></div>
-      <span class="block-label">Rosticidade</span>
-      <p class="block-body reveal">O rosto de Carlos Moreno tornou-se o rosto da marca. Quando o personagem foi "demitido" em 1995 dentro de um comercial, o público reagiu como se fosse real. A rosticidade aqui alcançou seu grau máximo: o rosto do ator e a identidade da marca tornaram-se inseparáveis.</p>
+      <span class="block-label">A Identidade Visual</span>
+      <p class="block-body reveal">O rosto de Carlos Moreno tornou-se o rosto da marca. Quando o personagem foi "demitido" em 1995 dentro de um comercial, o público reagiu como se fosse real — o ator e a identidade da marca tornaram-se inseparáveis.</p>
       <div class="desire-block reveal">
         <span class="block-label">O Desejo Evocado</span>
         <p class="desire-quote">"Quero pertencer a essa comunidade que entende a piada."</p>
@@ -912,8 +958,12 @@
     <div class="campaign-num">05</div>
     <p class="campaign-eyebrow reveal">Campanha 05 · 1993 a 2004</p>
     <h2 class="campaign-name reveal">Rider</h2>
-    <p class="campaign-tagline reveal">"Férias para os Pés"</p>
+    <p class="campaign-tagline reveal">"Dê férias para os seus pés"</p>
     <p class="campaign-year reveal">Calçados · Eixo Dionisíaco</p>
+    <a class="yt-btn reveal" href="https://www.youtube.com/watch?v=yCi2nHo4Brk&list=PLkNitkDDlqSvz-Jg5E5yDstF6l4L4a9ra&index=2" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.75 12.17 12.17 0 0 0-8 .38 12.36 12.36 0 0 0-4.18 2.73A11.89 11.89 0 0 0 1 12a11.89 11.89 0 0 0 2.64 4.95 12.36 12.36 0 0 0 4.18 2.73 12.17 12.17 0 0 0 8 .38 4.83 4.83 0 0 1 3.77-2.75A5 5 0 0 0 22 12a5 5 0 0 0-2.41-5.31zM10 15.5v-7l6 3.5z"/></svg>
+      Assistir às peças
+    </a>
   </div>
   <div class="campaign-divider"></div>
   <div class="campaign-body">
@@ -925,19 +975,19 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">Praia, corpo jovem e hedonismo sazonal</h3>
-      <p class="block-body reveal">O clichê do calçado de verão era previsível: sol, areia, beleza corporal, verão idealizado. Uma publicidade que existia quatro meses por ano e desaparecia do imaginário quando a estação terminava. Sazonal por natureza, portanto perecível.</p>
+      <p class="block-body reveal">O padrão do calçado de verão era previsível: sol, areia, beleza corporal, verão idealizado. Uma publicidade que existia quatro meses por ano e sumia do imaginário quando a estação terminava. Sazonal por natureza, perecível por definição.</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">A música brasileira como linguagem de identidade</h3>
-      <p class="block-body reveal">14 VTs musicais com regravações de MPB: Tim Maia, Paralamas, Rita Lee, Barão Vermelho, Skank, Jorge Benjor. A Rider deixou de vender sandália e passou a vender um repertório cultural: a brasilidade carioca, a atitude e a autenticidade que cada artista encarnava à sua maneira.</p>
+      <p class="block-body reveal">14 filmes musicais com regravações de MPB: Tim Maia, Paralamas, Rita Lee, Barão Vermelho, Skank, Jorge Benjor. A Rider deixou de vender sandália e passou a vender um repertório cultural — a brasilidade carioca, a atitude e a autenticidade que cada artista encarnava.</p>
     </div>
     <div class="cb-right">
-      <span class="block-label">Linguagem do Videoclipe</span>
+      <span class="block-label">Os Elementos</span>
       <h3 class="block-title reveal">A publicidade que virou produto cultural</h3>
-      <p class="block-body reveal">Os filmes eram veiculados como comerciais mas as músicas tocavam nas rádios como faixas artísticas. Os CDs <em>Rider Hits</em> chegaram a 250 mil cópias. A campanha rompeu a fronteira entre publicidade e indústria fonográfica, gerando consumo voluntário da marca (SOUTO; SOARES, 2005).</p>
+      <p class="block-body reveal">Os filmes eram veiculados como comerciais, mas as músicas tocavam nas rádios como faixas artísticas. Os CDs <em>Rider Hits</em> chegaram a 250 mil cópias. A campanha rompeu a fronteira entre publicidade e cultura, gerando consumo voluntário da marca.</p>
       <div class="block-spacer"></div>
-      <span class="block-label">Subversão do AIDA</span>
-      <p class="block-body reveal">O <strong>Interesse</strong> foi sustentado pelo prazer genuíno que a música provocava, e o consumidor assistia porque queria. A sandália era presença constante e deliberada: aparecia nos pés, nas mãos, como instrumento de dança, como acessório de cena. Quanto mais presente visualmente, mais se tornava símbolo de uma atitude.</p>
+      <span class="block-label">A Subversão</span>
+      <p class="block-body reveal">O <strong>Interesse</strong> foi sustentado pelo prazer genuíno que a música provocava — o consumidor assistia porque queria. A sandália aparecia nas mãos, nos pés, como instrumento de dança. Quanto mais presente, mais se tornava símbolo de uma atitude.</p>
       <div class="desire-block reveal">
         <span class="block-label">O Desejo Evocado</span>
         <p class="desire-quote">"Quero ser livre, autêntico e brasileiro do jeito certo."</p>
@@ -945,23 +995,23 @@
     </div>
   </div>
   <div class="campaign-bottom">
-    <span>14 VTs musicais · W/Brasil · 1993 a 2004</span>
+    <span>14 filmes musicais · W/Brasil · 1993 a 2004</span>
     <span>CDs Rider Hits · 250 mil cópias vendidas</span>
   </div>
 </section>
 
-<!-- CLOSING INSIGHT -->
+<!-- CLOSING -->
 <section id="insight">
   <div class="insight-inner">
     <p class="insight-eyebrow reveal">O mapa das conexões</p>
     <h2 class="insight-title reveal">O que todas<br>têm em comum</h2>
     <p class="insight-body reveal">
-      Independentemente do produto, do formato ou do arquétipo, as cinco campanhas compartilham de uma estratégia, todas identificaram o programa hegemônico da sua categoria e o subverteram com precisão. E todas despertaram um <strong>desejo</strong> que preexistia no consumidor, de pertencer, de ser reconhecido, de se identificar, de ser livre.
+      Independentemente do produto, do formato ou do arquétipo, as cinco campanhas compartilham uma mesma operação: todas identificaram o padrão da sua categoria e o subverteram com precisão. E todas despertaram um <strong>desejo</strong> que já existia no consumidor — de pertencer, de ser reconhecido, de se identificar, de ser livre.
     </p>
 
     <div class="arq-compare reveal">
       <div class="arq-group">
-        <div class="arq-group-title apolíneo">
+        <div class="arq-group-title apolineo">
           <span class="dot" style="background:#1976D2"></span>
           <span style="color:#1976D2; font-size:0.6rem; letter-spacing:0.2em;">EIXO APOLÍNEO · Razão &amp; Ordem</span>
         </div>
@@ -1007,7 +1057,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="footer-title">Projeto Aplicado</p>
+  <p class="footer-title">Projeto Aplicado · Publicidade e Propaganda</p>
   <p class="footer-author">Eduarda Kirch</p>
   <p class="footer-inst">Graduação em Publicidade e Propaganda · UNISINOS · Porto Alegre · 2026</p>
   <div class="footer-color-bar">
@@ -1019,29 +1069,47 @@
   </div>
 </footer>
 
+<!-- REFERENCES DRAWER -->
+<div class="refs-overlay" id="refs-overlay" onclick="closeRefs()"></div>
+<div class="refs-drawer" id="refs-drawer">
+  <div class="refs-header">
+    <span class="refs-title">Referências Bibliográficas</span>
+    <button class="refs-close" onclick="closeRefs()">Fechar</button>
+  </div>
+  <ul class="refs-list">
+    <li><strong>BENJAMIN, Walter.</strong> A obra de arte na era de sua reprodutibilidade técnica. Primeira versão, 1955.</li>
+    <li><strong>COSTA, Marcella Iole da.</strong> Sociedade, publicidade e diálogo: Garoto-Bombril em análise. Dissertação (Mestrado em Letras) — Universidade Presbiteriana Mackenzie, São Paulo, 2011.</li>
+    <li><strong>DELEUZE, Gilles; GUATTARI, Félix.</strong> Mil Platôs: capitalismo e esquizofrenia. Vol. 1. Rio de Janeiro: Editora 34, 1995.</li>
+    <li><strong>FIGUEREDO, Cínthia Soares.</strong> O primeiro sutiã não é assim uma Brastemp: uma apropriação mútua da oralidade da sociedade e da publicidade. TCC (Graduação em Publicidade e Propaganda) — FACHA, Rio de Janeiro, 2019.</li>
+    <li><strong>FLUSSER, Vilém.</strong> Filosofia da Caixa Preta: ensaios para uma futura filosofia da fotografia. São Paulo: Hucitec, 1985.</li>
+    <li><strong>JUNG, Carl Gustav.</strong> Os arquétipos e o inconsciente coletivo. 2. ed. Petrópolis: Vozes, 2000.</li>
+    <li><strong>KASTRUP, Virginia.</strong> O funcionamento da atenção no trabalho do cartógrafo. Psicologia &amp; Sociedade, v. 19, n. 1, p. 15-22, 2007.</li>
+    <li><strong>MANCINI, Renata; TROTTA, Mariana; SOUZA, Silvia Maria de.</strong> Análise semiótica da propaganda Hitler da Folha de São Paulo. In: XIII Colóquio do CPS. Niterói: UFF, 2013.</li>
+    <li><strong>MARK, Margaret; PEARSON, Carol S.</strong> O herói e o fora da lei: como construir marcas extraordinárias usando o poder dos arquétipos. São Paulo: Cultrix, 2003.</li>
+    <li><strong>NOGUEIRA, Bernardo Cayres Caetano.</strong> A influência da música na publicidade. Monografia (Graduação em Comunicação Social) — UniCEUB, Brasília, 2007.</li>
+    <li><strong>PIMENTA, Rodrigo Duguay da Hora.</strong> O sutiã semiótico: análise do filme publicitário "Meu Primeiro Sutiã" como signo associado à descoberta da feminilidade. In: XXVIII Congresso Brasileiro de Ciências da Comunicação (INTERCOM), Rio de Janeiro, 2005.</li>
+    <li><strong>RICOEUR, Paul.</strong> Tempo e narrativa I. São Paulo: WMF Martins Fontes, 2010.</li>
+    <li><strong>SOUTO, Juliana; SOARES, Thiago.</strong> A linguagem do videoclipe como geradora conceitual: análise da campanha publicitária da marca Rider. In: XXVIII INTERCOM, Rio de Janeiro, 2005.</li>
+    <li><strong>VIEIRA, Daniele Aben-Athar.</strong> Garoto Bombril: garoto-propaganda de maior sucesso na publicidade brasileira. Monografia (Graduação em Publicidade e Propaganda) — UniCEUB, Brasília, 2006.</li>
+  </ul>
+</div>
+
 <script>
   // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, (entry.target.dataset.delay || 0));
+        setTimeout(() => entry.target.classList.add('visible'), entry.target.dataset.delay || 0);
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-  reveals.forEach((el, i) => {
-    el.dataset.delay = (i % 5) * 80;
-    observer.observe(el);
-  });
+  reveals.forEach((el, i) => { el.dataset.delay = (i % 5) * 80; observer.observe(el); });
 
   // Active nav dot on scroll
   const sections = ['brastemp', 'valisere', 'folha', 'bombril', 'rider'];
   const dots = document.querySelectorAll('.nav-dot');
-
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1051,11 +1119,19 @@
       }
     });
   }, { threshold: 0.4 });
+  sections.forEach(id => { const el = document.getElementById(id); if (el) sectionObserver.observe(el); });
 
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) sectionObserver.observe(el);
-  });
+  // References drawer
+  function openRefs() {
+    document.getElementById('refs-overlay').classList.add('open');
+    document.getElementById('refs-drawer').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeRefs() {
+    document.getElementById('refs-overlay').classList.remove('open');
+    document.getElementById('refs-drawer').classList.remove('open');
+    document.body.style.overflow = '';
+  }
 </script>
 </body>
 </html>

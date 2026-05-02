@@ -511,56 +511,6 @@
     margin: 0 auto 4rem;
   }
 
-  .arq-compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    text-align: left;
-    margin-bottom: 4rem;
-  }
-
-  .arq-group {
-    border-radius: 12px;
-    padding: 2rem;
-    background: white;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-  }
-
-  .arq-group-title {
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .arq-group-title .dot { width: 8px; height: 8px; border-radius: 50%; }
-  .arq-group-title.apolineo .dot { background: #1976D2; }
-  .arq-group-title.dionisiaco .dot { background: var(--rider-mid); }
-
-  .arq-campaigns { display: flex; flex-direction: column; gap: 0.8rem; }
-
-  .arq-camp-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem 0.8rem;
-    border-radius: 6px;
-    background: rgba(0,0,0,0.03);
-    font-size: 0.85rem;
-  }
-
-  .arq-camp-name { font-weight: 600; }
-  .arq-camp-archetype { font-size: 0.72rem; font-style: italic; opacity: 0.5; }
-
-  .dot-brastemp { width: 8px; height: 8px; border-radius: 50%; background: var(--brastemp-mid); display: inline-block; margin-right: 6px; }
-  .dot-valisère { width: 8px; height: 8px; border-radius: 50%; background: var(--valisere-mid); display: inline-block; margin-right: 6px; }
-  .dot-folha    { width: 8px; height: 8px; border-radius: 50%; background: var(--folha-mid); display: inline-block; margin-right: 6px; }
-  .dot-bombril  { width: 8px; height: 8px; border-radius: 50%; background: var(--bombril-mid); display: inline-block; margin-right: 6px; }
-  .dot-rider    { width: 8px; height: 8px; border-radius: 50%; background: var(--rider-mid); display: inline-block; margin-right: 6px; }
 
   .insight-quote {
     font-family: 'Playfair Display', serif;
@@ -673,6 +623,46 @@
 
   .refs-list li strong { color: rgba(255,255,255,0.8); font-weight: 600; }
 
+  /* ── PATTERN STEPS ── */
+  .pattern-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 5rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .pattern-step {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .pattern-step:last-child { border-bottom: none; }
+
+  .pattern-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.1;
+    flex-shrink: 0;
+    color: var(--dark);
+    min-width: 3rem;
+  }
+
+  .pattern-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--dark);
+  }
+
   /* ── REVEAL ── */
   .reveal {
     opacity: 0;
@@ -736,7 +726,7 @@
     <h2 class="intro-title reveal">Toda campanha memorável desperta um sentimento, um desejo</h2>
     <p class="intro-body reveal">
       Cada campanha analisada aqui construiu uma identidade própria na memória coletiva, não necessariamente um rosto humano, mas uma presença visual e simbólica que o público reconhece instantaneamente décadas depois. O que ficou não foi o produto. Foi o que ele despertava.<br><br>
-      A análise segue três eixos: o padrão que existia na categoria e que todos seguiam, a jogada criativa que rompeu com esse padrão, e as ferramentas que garantiram que essa ruptura ficasse na memória.
+      A análise segue três eixos, o padrão que existia na categoria e que todos seguiam, a jogada criativa que rompeu com esse padrão, e as ferramentas que garantiram que essa ruptura ficasse na memória.
     </p>
     <div class="axes-grid reveal">
       <div class="axis-card">
@@ -781,7 +771,7 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">Listar atributos técnicos do produto</h3>
-      <p class="block-body reveal">O padrão da categoria de eletrodomésticos era a demonstração funcional: potência, capacidade, eficiência, preço. A dona de casa precisava ser convencida de que o produto era tecnicamente superior. Uma publicidade correta e completamente esquecível.</p>
+      <p class="block-body reveal">O padrão da categoria de eletrodomésticos era a demonstração funcional, mostrando potência, capacidade, eficiência, preço. A dona de casa precisava ser convencida de que o produto era tecnicamente superior. Uma publicidade correta e completamente esquecível.</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">A marca virou o padrão de qualidade</h3>
@@ -790,10 +780,10 @@
     <div class="cb-right">
       <span class="block-label">Os Elementos</span>
       <h3 class="block-title reveal">Storytelling serializado com celebridades</h3>
-      <p class="block-body reveal">Cada comercial era uma micro-história: pessoas sentadas em poltronas, com tranquilidade aristocrática, descrevendo situações que simplesmente "não são uma Brastemp". O acúmulo de histórias construiu um universo consistente sem nunca precisar mostrar o produto em ação.</p>
+      <p class="block-body reveal">Cada comercial era uma micro-história, com pessoas sentadas em poltronas, com tranquilidade aristocrática, descrevendo situações que simplesmente "não são uma Brastemp". O acúmulo de histórias construiu um universo consistente sem nunca precisar mostrar o produto em ação.</p>
       <div class="block-spacer"></div>
       <span class="block-label">A Subversão</span>
-      <p class="block-body reveal">A energia foi concentrada no <strong>Desejo</strong>: não pelo produto, mas pela identidade de alguém que tem o discernimento de reconhecer a excelência. A compra tornou-se um rito de passagem para um clube exclusivo de bom gosto.</p>
+      <p class="block-body reveal">A energia foi concentrada no <strong>Desejo</strong>, não pelo produto, mas pela identidade de alguém que tem o discernimento de reconhecer a excelência. A compra tornou-se um rito de passagem para um clube exclusivo de bom gosto.</p>
       <div class="desire-block reveal">
         <span class="block-label">O Desejo Evocado</span>
         <p class="desire-quote">"Quero ser reconhecida como alguém que sabe a diferença."</p>
@@ -806,8 +796,8 @@
   </div>
 </section>
 
-<!-- ══════════════ VALISÈRE ══════════════ -->
-<section id="valisère" class="campaign">
+<!-- ══════════════ VALISERE ══════════════ -->
+<section id="valisere" class="campaign">
   <div class="campaign-top">
     <div class="campaign-num">02</div>
     <p class="campaign-eyebrow reveal">Campanha 02 · 1987</p>
@@ -833,12 +823,12 @@
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">A inocência no lugar da sedução</h3>
-      <p class="block-body reveal">Washington Olivetto escolheu o polo oposto: uma menina que corre radiante contar à mãe que precisa do primeiro sutiã. Transformou um produto íntimo em rito de passagem universal, uma experiência que toda mulher carrega na memória.</p>
+      <p class="block-body reveal">Washington Olivetto escolheu o polo oposto, trazendo uma menina que corre radiante contar à mãe que precisa do primeiro sutiã. Com apenas US$ 86 mil de produção, transformou um produto íntimo em rito de passagem universal, uma experiência que toda mulher carrega na memória.</p>
     </div>
     <div class="cb-right">
       <span class="block-label">Os Elementos</span>
       <h3 class="block-title reveal">O rito de passagem</h3>
-      <p class="block-body reveal">A campanha conta a história do limiar entre infância e adolescência: um arco narrativo com a densidade de uma história completa em segundos. O sutiã deixa de ser produto e passa a ser símbolo de uma transformação.</p>
+      <p class="block-body reveal">A campanha conta a história do limiar entre infância e adolescência, um arco narrativo com a densidade de uma história completa em segundos. O sutiã deixa de ser produto e passa a ser símbolo de uma transformação.</p>
       <div class="block-spacer"></div>
       <span class="block-label">A Identidade Visual</span>
       <p class="block-body reveal">O rosto da campanha é o da garota em movimento, puro, ansioso, genuíno. Uma imagem que se fez reconhecer como autêntica porque tocou a memória de uma experiência universal antes de qualquer argumento racional.</p>
@@ -851,7 +841,7 @@
   <div class="campaign-bottom">
     <span>Cannes Lions · Múltiplos prêmios 1987</span>
     <span>45% de retenção espontânea décadas depois</span>
-    <span>"O primeiro Valisère a gente nunca esquece"</span>
+    <span>"O primeiro a gente nunca esquece"</span>
   </div>
 </section>
 
@@ -878,16 +868,16 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">Afirmar o que o jornal publica</h3>
-      <p class="block-body reveal">A publicidade de jornais listava credenciais, tradição, abrangência. Um discurso voltado para dentro, que dizia ser sério sem provar nada. No Brasil da redemocratização, esse padrão era ainda mais insuficiente, a pergunta urgente era "em quem confiar?"</p>
+      <p class="block-body reveal">A publicidade de jornais listava credenciais, tradição, abrangência. Um discurso voltado para dentro, que dizia ser sério sem provar nada. No Brasil da redemocratização, esse padrão era ainda mais insuficiente, pois a pergunta urgente era "em quem confiar?"</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">Mostrar o que a Folha jamais publicaria</h3>
-      <p class="block-body reveal">A peça começa como um elogio formal a um grande homem, listando realizações e capacidade de mobilizar massas. Só no final revela que o homenageado é Hitler. A conclusão é direta: a Folha não publicaria isso. O produto aparece pela ética, não pela imagem.</p>
+      <p class="block-body reveal">A peça começa como um elogio formal a um grande homem, listando realizações e capacidade de mobilizar massas. Só no final revela que o homenageado é Hitler. A conclusão é direta, a Folha não publicaria isso. O produto aparece pela ética, não pela imagem.</p>
     </div>
     <div class="cb-right">
       <span class="block-label">Os Elementos</span>
       <h3 class="block-title reveal">A tensão entre texto e imagem</h3>
-      <p class="block-body reveal">O texto constrói uma expectativa positiva enquanto a imagem retarda a revelação, pontos negros que se expandem lentamente até revelar o rosto de Hitler. A ruptura é irreversível: uma vez lida, a peça não pode ser "deslida". Essa experiência é exatamente o que garante que ela nunca seja esquecida.</p>
+      <p class="block-body reveal">O texto constrói uma expectativa positiva enquanto a imagem retarda a revelação, com pontos negros que se expandem lentamente até revelar o rosto de Hitler. A ruptura é irreversível, e uma vez lida, a peça não pode ser "deslida". Essa experiência é exatamente o que garante que ela nunca seja esquecida.</p>
       <div class="block-spacer"></div>
       <span class="block-label">A Subversão</span>
       <p class="block-body reveal">A <strong>Ação</strong> deixou de ser consumo e tornou-se afirmação moral. Assinar a Folha era uma declaração de valores em um Brasil que acabara de sair da ditadura.</p>
@@ -926,19 +916,19 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">A dona de casa como demonstradora obediente</h3>
-      <p class="block-body reveal">Produtos de limpeza exigiam a cuidadora: mulher jovem, sorridente, em ambiente doméstico impecável, validando o produto. Um padrão que infantilizava o público e produzia redundância total, as mulheres já haviam percebido isso há muito tempo.</p>
+      <p class="block-body reveal">Produtos de limpeza exigiam a cuidadora, mulher jovem, sorridente, em ambiente doméstico impecável, validando o produto. Um padrão que infantilizava o público e produzia redundância total. As mulheres já haviam percebido isso há muito tempo.</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">Um homem que fala com a dona de casa como igual</h3>
-      <p class="block-body reveal">Carlos Moreno: magro, levemente desengonçado, calvície discreta e sorriso de cúmplice. Não era galã nem autoridade, era alguém que olhava direto para a câmera e falava como velho amigo. Num único movimento, o padrão inteiro foi desmontado.</p>
+      <p class="block-body reveal">Carlos Moreno, magro, levemente desengonçado, calvície discreta e sorriso de cúmplice. Não era galã nem autoridade, era alguém que olhava direto para a câmera e falava como velho amigo. Num único movimento, o padrão inteiro foi desmontado.</p>
     </div>
     <div class="cb-right">
       <span class="block-label">Os Elementos</span>
       <h3 class="block-title reveal">26 anos de crônica cômica de costumes</h3>
-      <p class="block-body reveal">337 comerciais diferentes. Cada peça parodiava fatos culturais do momento, políticos, novelas, eventos nacionais. A campanha funcionava como uma coluna de jornal: o público voltava toda semana para ver o que o Garoto Bombril diria desta vez.</p>
+      <p class="block-body reveal">337 comerciais diferentes. Cada peça parodiava fatos culturais do momento, como políticos, novelas e eventos nacionais. A campanha funcionava como uma coluna de jornal, e o público voltava toda semana para ver o que o Garoto Bombril diria desta vez.</p>
       <div class="block-spacer"></div>
       <span class="block-label">A Identidade Visual</span>
-      <p class="block-body reveal">O rosto de Carlos Moreno tornou-se o rosto da marca. Quando o personagem foi "demitido" em 1995 dentro de um comercial, o público reagiu como se fosse real, o ator e a identidade da marca tornaram-se inseparáveis.</p>
+      <p class="block-body reveal">O rosto de Carlos Moreno tornou-se o rosto da marca. Quando o personagem foi "demitido" em 1995 dentro de um comercial, o público reagiu como se fosse real, e o ator e a identidade da marca tornaram-se inseparáveis.</p>
       <div class="desire-block reveal">
         <span class="block-label">O Desejo Evocado</span>
         <p class="desire-quote">"Quero pertencer a essa comunidade que entende a piada."</p>
@@ -975,11 +965,11 @@
       </div>
       <span class="block-label">O Programa (Caixa Preta)</span>
       <h3 class="block-title reveal">Praia, corpo jovem e hedonismo sazonal</h3>
-      <p class="block-body reveal">O padrão do calçado de verão era previsível: sol, areia, beleza corporal, verão idealizado. Uma publicidade que existia quatro meses por ano e sumia do imaginário quando a estação terminava. Sazonal por natureza, perecível por definição.</p>
+      <p class="block-body reveal">O padrão do calçado de verão era previsível, sempre com sol, areia, beleza corporal, verão idealizado. Uma publicidade que existia quatro meses por ano e sumia do imaginário quando a estação terminava. Sazonal por natureza, perecível por definição.</p>
       <div class="block-spacer"></div>
       <span class="block-label">O Jogo (A Jogada)</span>
       <h3 class="block-title reveal">A música brasileira como linguagem de identidade</h3>
-      <p class="block-body reveal">14 filmes musicais com regravações de MPB: Tim Maia, Paralamas, Rita Lee, Barão Vermelho, Skank, Jorge Benjor. A Rider deixou de vender sandália e passou a vender um repertório cultural, a brasilidade carioca, a atitude e a autenticidade que cada artista encarnava.</p>
+      <p class="block-body reveal">14 filmes musicais com regravações de MPB, com Tim Maia, Paralamas, Rita Lee, Barão Vermelho, Skank, Jorge Benjor. A Rider deixou de vender sandália e passou a vender um repertório cultural, a brasilidade carioca, a atitude e a autenticidade que cada artista encarnava.</p>
     </div>
     <div class="cb-right">
       <span class="block-label">Os Elementos</span>
@@ -987,7 +977,7 @@
       <p class="block-body reveal">Os filmes eram veiculados como comerciais, mas as músicas tocavam nas rádios como faixas artísticas. Os CDs <em>Rider Hits</em> chegaram a 250 mil cópias. A campanha rompeu a fronteira entre publicidade e cultura, gerando consumo voluntário da marca.</p>
       <div class="block-spacer"></div>
       <span class="block-label">A Subversão</span>
-      <p class="block-body reveal">O <strong>Interesse</strong> foi sustentado pelo prazer genuíno que a música provocava, o consumidor assistia porque queria. A sandália aparecia nas mãos, nos pés, como instrumento de dança. Quanto mais presente, mais se tornava símbolo de uma atitude.</p>
+      <p class="block-body reveal">O <strong>Interesse</strong> foi sustentado pelo prazer genuíno que a música provocava, e o consumidor assistia porque queria. A sandália aparecia nas mãos, nos pés, como instrumento de dança. Quanto mais presente, mais se tornava símbolo de uma atitude.</p>
       <div class="desire-block reveal">
         <span class="block-label">O Desejo Evocado</span>
         <p class="desire-quote">"Quero ser livre, autêntico e brasileiro do jeito certo."</p>
@@ -1008,7 +998,7 @@
     <p class="insight-body reveal">
       São os exemplos mais claros de algo que se repete sempre que uma campanha atravessa gerações. Alguém identificou o que todos faziam, decidiu não fazer, e foi direto ao que o público sentia. O padrão não pertence a uma época. Pertence a quem tem coragem de usá-lo.
     </p>
- 
+
     <div class="pattern-steps reveal">
       <div class="pattern-step">
         <span class="pattern-num">01</span>
@@ -1023,7 +1013,7 @@
         <p class="pattern-text">Desperte um desejo que já existe no seu público.</p>
       </div>
     </div>
- 
+
     <p class="insight-quote reveal">
       A memorabilidade nunca foi uma questão de orçamento ou tecnologia.<br>
       Foi sempre uma questão de coragem criativa.
